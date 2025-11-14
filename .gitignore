@@ -1,0 +1,6 @@
+# local files
+websafescan-output/
+*.log
+venv/
+__pycache__/
+.DS_Store
