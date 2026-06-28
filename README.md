@@ -1,65 +1,83 @@
-# WebSafeScan
+# 🛡️ WebSafeScan
 
-WebSafeScan is a simple, non-exploitative Bash tool that checks basic website security such as:
-- Security headers  
-- Cookie flags  
-- Allowed HTTP methods  
-- Server / X-Powered-By disclosure  
-- TLS/SSL configuration (via sslyze or openssl)
+**Advanced Bash-based Web Security Scanner for Security Headers, SSL/TLS Validation, Cookie Analysis, and Server Security Assessment**
 
-⚠️ **Use this tool only on websites you own or have written permission to test.**
+---
+
+## Overview
+
+WebSafeScan is a lightweight Bash-based security assessment tool that automates common web security checks without performing exploitation or intrusive testing.
+
+It helps security professionals, students, and system administrators quickly identify common security misconfigurations on websites.
+
+> ⚠️ **This tool is intended for authorized security testing only.**
+
+---
+
+## Features
+
+✔ Security Header Analysis
+
+✔ Cookie Security Analysis
+
+✔ HTTP Method Enumeration
+
+✔ Server & X-Powered-By Disclosure Detection
+
+✔ SSL/TLS Validation (SSLYze or OpenSSL)
+
+✔ Compliance Warnings
+
+✔ Simple Terminal Reports
 
 ---
 
 ## Requirements
 
-Minimum:
-- Bash
-- curl
-- openssl
+### Minimum
 
-Recommended (for full TLS checks):
-- pipx
-- sslyze
+* Bash
+* curl
+* OpenSSL
+
+### Recommended
+
+* Python
+* pipx
+* SSLYze
 
 ---
 
 ## Installation
 
-### Option 1 — Recommended (pipx + sslyze)
+### Full Installation
+
 ```bash
 sudo apt update
 sudo apt install -y curl openssl python3 python3-pip pipx
 python3 -m pipx ensurepath
 pipx install sslyze
-````
-
-Make the script executable:
-
-```bash
 chmod +x detailed_webscan.sh
 ```
 
-### Option 2 — Minimal install
+### Minimal Installation
 
 ```bash
 sudo apt install -y curl openssl
 chmod +x detailed_webscan.sh
 ```
 
-(SSL checks will be basic without sslyze.)
-
 ---
 
 ## Usage
 
-Basic scan:
+Run a scan
 
 ```bash
 ./detailed_webscan.sh https://example.com
 ```
 
-Save the output:
+Save results
 
 ```bash
 ./detailed_webscan.sh https://example.com > report.txt
@@ -67,21 +85,81 @@ Save the output:
 
 ---
 
-## What It Checks
+## Security Checks
 
-* Missing/present security headers
-* Cookies with/without Secure & HttpOnly flags
-* Allowed HTTP methods (OPTIONS, TRACE, etc.)
-* Server information disclosure
-* TLS/SSL certificate & cipher info (if sslyze is installed)
-* Basic compliance warnings
+* HTTP Security Headers
+* Secure & HttpOnly Cookie Flags
+* Allowed HTTP Methods
+* Server Banner Disclosure
+* X-Powered-By Detection
+* TLS/SSL Certificate Validation
+* Cipher Information
+* Basic Security Recommendations
+
+---
+
+## Example Output
+
+```text
+Target: https://example.com
+
+Checking Security Headers...
+✔ HSTS Found
+✘ Content-Security-Policy Missing
+
+Checking Cookies...
+✔ Secure Cookie
+✔ HttpOnly Cookie
+
+Checking TLS...
+✔ TLS 1.3 Supported
+
+Scan Completed
+```
 
 ---
 
+## Project Structure
 
-## Legal Notice
-
-This tool is for **authorized security testing only**.
-The author is not responsible for misuse.
+```text
+websafe-scan/
+├── README.md
+├── detailed_webscan.sh
+├── LICENSE
+├── CHANGELOG.md
+├── screenshots/
+└── examples/
+```
 
 ---
+
+## Roadmap
+
+* JSON Report Export
+* HTML Report Generation
+* PDF Reports
+* Multi-target Scanning
+* Docker Support
+* GitHub Actions Integration
+
+---
+
+## License
+
+Released under the MIT License.
+
+---
+
+## Author
+
+**Muhammed Fasal**
+
+Cybersecurity Researcher | VAPT Specialist | IT Administrator
+
+GitHub: https://github.com/Fasal17
+
+Portfolio: https://fasal17.github.io/Muhammed-Fasal/
+
+LinkedIn: https://linkedin.com/in/muhammed-fasal-ms
+
+Bugcrowd: https://bugcrowd.com/h/Fasal17
