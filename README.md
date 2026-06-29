@@ -1,5 +1,13 @@
 # 🛡️ WebSafeScan
 
+![Bash](https://img.shields.io/badge/Bash-Script-green)
+![Platform](https://img.shields.io/badge/Platform-Linux-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Version](https://img.shields.io/badge/Version-v1.0-orange)
+
+Advanced Web Security Scanner for Security Researchers and Penetration Testers.
+
 **Advanced Bash-based Web Security Scanner for Security Headers, SSL/TLS Validation, Cookie Analysis, and Server Security Assessment**
 
 ---
